@@ -1,0 +1,33 @@
+insert into producer (name, id_film) values
+('James Cameron', 1),
+('James Cameron', 2),
+('Vin Diesel', 3),
+('Justin Leen', 3),
+('Jay Oliva', 4),
+('Joss Uidom', 5);
+
+
+insert into genres (title) values
+('Romantic');
+
+insert into film (title, id_genre) values
+('Titanic', 4),
+('Avatar', 2), 
+('Fat_&_Furious', 6),
+('Batman_Arkham_Knight', 7),
+('Avangers', 7),
+('Oculus', 1),
+('American pie', 3);
+
+select title, genre
+from film 
+inner join genres on (genres.id = film.id_genre);
+
+select title, genre
+from film 
+left join genres on (genres.id = film.id_genre);
+
+select title, genre, name 
+from film
+inner join genres on (genres.id = film.id_genre)
+inner join producer on (film.id = producer.id_film);
